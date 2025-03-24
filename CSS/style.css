@@ -28,6 +28,7 @@ html {
 }
 
 
+
 header {
     width: 96%;
     background: #fff;
@@ -43,12 +44,12 @@ header {
     z-index: 1000;
     transition: 0.2s;
 }
- 
-.header-active{
-top: 0;
-width: 100%;
-border-radius: 0;
-box-shadow: 0.1rem .3rem rgba(0, 0, 0, .3);
+
+.header-active {
+    top: 0;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: 0.1rem .3rem rgba(0, 0, 0, .3);
 }
 
 header .navbar ul {
@@ -99,23 +100,154 @@ header .fa-bars {
 
 
 
-header .fa-times{
-transform: rotate(180deg);
-color: var(--violet);
+header .fa-times {
+    transform: rotate(180deg);
+    color: var(--violet);
 }
+
+
+
+/*--------------Header-end------------------*/
+
+/*--------------Home-Start------------------*/
+.home {
+    min-height: 100vh;
+    background: linear-gradient(rgba(198, 59, 250, .8), rgba(198, 59, 250, .8)), url(../img/2.jpg)no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.home .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding-top: 14rem;
+    padding-bottom: 8rem;
+    text-align: center;
+
+}
+
+.home .content h1{
+    font-size: 5rem;
+    color: #fff;
+    padding:0 1rem;
+    text-shadow: 0 .3rem .5rem rgba(0, 0, 0, .3);
+    text-transform: uppercase;
+}
+.home .content p{
+    font-size: 2rem;
+    color: #eee;
+    padding: 1rem 25rem;
+}
+
+.home .content button{
+    height: 4rem;
+    width: 20rem;
+    border-radius: 5rem;
+    background: var(--pink);
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: .2s;
+    border: none;
+    box-shadow: 0 .3rem 1rem rgba(0, 0, 0, .3);
+}
+
+.home .content button:hover{
+    letter-spacing: 0.2rem;
+}
+
+
+.home .box-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.home .box-container .box{
+    height: 20rem;
+    width: 25rem;
+    background: #fff;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .5);
+    margin: 2rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.home .box-container .box:hover{
+    transform: scale(1.1,1.1);
+}
+
+.home .box-container .box i{
+    height: 6rem;
+    width: 6rem;
+    line-height: 6rem;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    background: var(--violet);
+    font-size: 3rem;
+    margin:2rem 0;
+    transition: .2s;
+}
+
+.home .box-container .box h3{
+    font-size: 2rem;
+    color: var(--pink);
+    transition: .2s;
+}
+
+.home .box-container .box p{
+    font-size: 1.3rem;
+    padding: .7rem 2rem;
+    color: #666;
+}
+
+
+.home .box-container .box:hover i{
+    background: var(--pink);
+}
+
+.home .box-container .box:hover h3{
+color: var(--violet);
+ }
+
+.home::before{
+    content: '';
+    position: absolute;
+    bottom: -25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 70vh solid #fff;
+    width: 120%;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+
+/*--------------Home-End------------------*/
+
 
 /*  media queries  */
 
-@media (max-width:768px){
-    html{
+@media (max-width:768px) {
+    html {
         font-size: 55%;
     }
-    header .fa-bars{
+
+    header .fa-bars {
         display: block;
     }
-    header .navbar{
+
+    header .navbar {
         position: fixed;
-        top:-100rem;
+        top: -100rem;
         left: 0;
         width: 100%;
         background: #fff;
@@ -123,24 +255,36 @@ color: var(--violet);
         opacity: 0;
         transition: 0.2s linear;
     }
-    header .navbar ul{
+
+    header .navbar ul {
         flex-flow: column;
         padding: 2rem 0;
     }
-    header .navbar ul li{
+
+    header .navbar ul li {
         margin: 1rem 0;
         width: 100%;
         text-align: center;
     }
 
-    header .navbar ul li a{
+    header .navbar ul li a {
         font-size: 3rem;
         display: block;
     }
- 
-    header .nav-toggle{
+
+    header .nav-toggle {
         top: 5.5rem;
         opacity: 1;
     }
 
+
+    .home .content p{
+        padding: 1.5rem 2rem;
+    }
+    .home::before{
+        display: none;
+    }
+
 }
+
+
